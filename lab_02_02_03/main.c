@@ -22,19 +22,19 @@ int main(void)
     if (input_array(&elements_number, array))
     {
 
-    if (elements_number <= MAX_SIZE && elements_number > 0)
-    {
-        int new_array[MAX_SIZE] = { 0 };
-        int new_elements_number = 0;
-
-        make_array(elements_number, &new_elements_number, array, new_array);
-        print_array(new_elements_number, new_array);
-
-        if (new_elements_number != 0)
+        if (elements_number <= MAX_SIZE && elements_number > 0)
         {
-        exit_code = ERR_OK;
+            int new_array[MAX_SIZE] = { 0 };
+            int new_elements_number = 0;
+
+            make_array(elements_number, &new_elements_number, array, new_array);
+            print_array(new_elements_number, new_array);
+
+            if (new_elements_number != 0)
+            {
+                exit_code = ERR_OK;
+            }
         }
-    }
     }
 
     return exit_code;
@@ -92,7 +92,6 @@ int check_number(int number)
 
     if (sum != number_cp || number_cp == 0)
     {
-        // printf("sum: %d, number: %d", sum, number_cp);
         is_amstrong_number = 0;
     }
 
@@ -105,7 +104,6 @@ void make_array(int elements_number_of_old_array, int *elements_number_of_new_ar
 
     for (int current_element = 0; current_element < elements_number_of_old_array; ++current_element)
     {
-        // printf("number: %d IS: %d ", check_number(old_array[current_element]), old_array[current_element]);
         if (check_number(old_array[current_element]))
         {
             new_array[*elements_number_of_new_array] = old_array[current_element];

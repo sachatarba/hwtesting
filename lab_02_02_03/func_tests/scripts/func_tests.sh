@@ -22,7 +22,7 @@ for file_in in ../data/neg_*in.txt; do
         if ./neg_case.sh "$file_in"; then
             echo "$file_in: passed"
         else
-            echo "$file_out: failed"
+            echo "$file_in: failed"
         fi
     fi
 done
