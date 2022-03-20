@@ -21,8 +21,12 @@ int main(void)
         if (elements_number <= 10 && elements_number > 0)
         {
             ans = calc_geometric_mean(elements_number, array);
-            printf("%lf", ans);
-            exit_code = ERR_OK;
+
+            if (ans != 0)
+            {
+                printf("%lf", ans);
+                exit_code = ERR_OK;
+            }
         }
     }
 
@@ -52,13 +56,25 @@ int input_array(int *elements_number, int *array)
 double calc_geometric_mean(int elements_number, int *array)
 {
     double geometric_mean = 1;
+    int counter_of_positive_number = 0;
 
     for (int current_element = 0; current_element < elements_number; ++current_element)
     {
-        geometric_mean *= array[current_element];
+        if (array[current_element] > 0)
+        {
+            geometric_mean *= array[current_element];
+            ++counter_of_positive_number;
+        }
     }
 
-    geometric_mean = pow(geometric_mean, 1. / elements_number);
+    if (counter_of_positive_number != 0)
+    {    
+        geometric_mean = pow(geometric_mean, 1. / elements_number);
+    }
+    else
+    {
+        geometric_mean = 0;
+    }
 
     return geometric_mean;
 }
