@@ -21,7 +21,6 @@ int main(void)
 
     if (input_array(&elements_number, array))
     {
-
         if (elements_number <= MAX_SIZE && elements_number > 0)
         {
             int new_array[MAX_SIZE] = { 0 };
