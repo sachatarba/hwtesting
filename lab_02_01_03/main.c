@@ -17,7 +17,6 @@ int main(void)
 
     if (input_array(&elements_number, array))
     {
-
         if (elements_number <= 10 && elements_number > 0)
         {
             ans = calc_geometric_mean(elements_number, array);

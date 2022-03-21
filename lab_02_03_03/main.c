@@ -102,6 +102,5 @@ void modify_array(int array_size, int *array, int *new_array_size)
             ++current_element;
             ++*new_array_size;
         }
-
     }
 }
