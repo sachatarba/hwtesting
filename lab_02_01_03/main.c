@@ -68,7 +68,7 @@ double calc_geometric_mean(int elements_number, int *array)
 
     if (counter_of_positive_number != 0)
     {    
-        geometric_mean = pow(geometric_mean, 1. / elements_number);
+        geometric_mean = pow(geometric_mean, 1. / counter_of_positive_number);
     }
     else
     {

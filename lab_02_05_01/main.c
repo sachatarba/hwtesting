@@ -82,7 +82,6 @@ void copy_pos_elm(int *source_begin, int *source_end, int *cp_begin, int **cp_en
 
         ++current_ptr_source;
     }
-
 }
 
 void copy_neg_elm(int *source_begin, int *source_end, int *cp_begin, int **cp_end)
@@ -100,7 +99,6 @@ void copy_neg_elm(int *source_begin, int *source_end, int *cp_begin, int **cp_en
 
         ++current_ptr_source;
     }
-
 }
 
 int calc_mul(int *array1_begin, int *array1_end, int *array2_begin, int *array2_end)
@@ -110,9 +108,9 @@ int calc_mul(int *array1_begin, int *array1_end, int *array2_begin, int *array2_
 
     for (int current_elm = 0; current_elm < min; ++current_elm)
     {
-        mul += *array1_begin * *(array2_end - 1);
-        ++array1_begin;
-        --array2_end;
+        mul += *array2_begin * *(array1_end - 1);
+        ++array2_begin;
+        --array1_end;
     }
 
     return mul;
